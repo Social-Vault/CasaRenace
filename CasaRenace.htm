@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Casa Renace</title>
+  <title>Casa Renace | Luxury Spa & Wellness</title>
   <style>
     :root {
       --gold: #bfa257;
@@ -190,121 +190,136 @@
 </head>
 <body>
 
-  <header>
-    <h1>Casa Renace</h1>
-    <p>Renueva cuerpo, mente y espíritu 🦋</p>
-  </header>
+<header>
+  <h1>Casa Renace</h1>
+  <p>Renew your body, mind, and spirit 🦋</p>
+</header>
 
-  <nav>
-    <a href="#" onclick="navigate('home')">Inicio</a>
-    <a href="#" onclick="navigate('services')">Servicios</a>
-    <a href="#" onclick="navigate('gallery')">Galería</a>
-    <a href="#" onclick="navigate('about')">Quiénes Somos</a>
-    <a href="#" onclick="navigate('contact')">Reservas</a>
-  </nav>
+<nav>
+  <a href="#" onclick="navigate('home')">Home</a>
+  <a href="#" onclick="navigate('services')">Services</a>
+  <a href="#" onclick="navigate('gallery')">Gallery</a>
+  <a href="#" onclick="navigate('about')">About Us</a>
+  <a href="#" onclick="navigate('contact')">Book Now</a>
+</nav>
 
-  <main id="content"></main>
+<main id="content"></main>
 
-  <footer>
-    © 2026 Casa Renace · Bienestar & Belleza
-  </footer>
+<footer>
+  © 2026 Casa Renace · Luxury Spa & Wellness
+</footer>
 
-  <script>
-    const routes = {
-      home: `
-        <h2>Tu momento de renacer ha llegado</h2>
-        <p class="cta">Sumérgete en un oasis de calma, belleza y renovación total. Reserva ahora y descubre cómo se siente volver a ti 💆‍♀️💖</p>
-        <a href="#" class="btn-gold" onclick="navigate('contact')">Reservar mi cita</a>
-      `,
-      services: `
-        <h2>Servicios & Precios</h2>
-        <div class="services">
-          ✨ <strong>Masaje relajante:</strong> $500 MXN (60 min)<br>
-          ✨ <strong>Facial limpieza profunda:</strong> $600 MXN (45 min)<br>
-          ✨ <strong>Pedicura Spa:</strong> $350 MXN<br>
-          ✨ <strong>Manicura clásica:</strong> $250 MXN<br>
-          ✨ <strong>Tratamiento corporal con envoltura:</strong> $750 MXN<br>
-          ✨ <strong>Combo facial + masaje:</strong> $950 MXN
-        </div>
-        <a href="#" class="btn-gold" onclick="navigate('contact')">Agendar ahora</a>
-      `,
-      gallery: `
-        <h2>Galería</h2>
-        <div class="gallery">
-          <img src="https://via.placeholder.com/300x200?text=Masaje">
-          <img src="https://via.placeholder.com/300x200?text=Facial">
-          <img src="https://via.placeholder.com/300x200?text=Pedicura">
-          <img src="https://via.placeholder.com/300x200?text=Spa+Experience">
-        </div>
-      `,
-      about: `
-        <h2>Quiénes Somos</h2>
-        <p>Casa Renace es un santuario de bienestar creado por mujeres, para mujeres. Nuestro propósito es ayudarte a reconectar contigo misma mediante servicios que cuidan tu cuerpo y elevan tu alma.</p>
-        <a href="#" class="btn-gold" onclick="navigate('contact')">Quiero una cita</a>
-      `,
-      contact: `
-        <h2>Reserva tu cita</h2>
-        <form onsubmit="sendToWhatsApp(event)">
-          <input type="text" id="name" placeholder="Nombre completo" required>
-          <input type="tel" id="phone" placeholder="Teléfono" required>
-          <select id="service" required>
-            <option value="">Selecciona un servicio</option>
-            <option>Masaje relajante</option>
-            <option>Facial limpieza profunda</option>
-            <option>Pedicura spa</option>
-            <option>Manicura clásica</option>
-            <option>Tratamiento corporal</option>
-            <option>Combo facial + masaje</option>
-          </select>
-          <input type="date" id="date" required>
-          <input type="time" id="time" required>
-          <select id="payment" required>
-            <option value="">Método de pago</option>
-            <option>Transferencia</option>
-            <option>Efectivo</option>
-          </select>
-          <button type="submit">Reservar por WhatsApp</button>
-        </form>
-        <div class="social">
-          <a href="https://instagram.com" target="_blank">📸 Instagram</a>
-          <a href="https://facebook.com" target="_blank">📘 Facebook</a>
-          <a href="https://wa.me/524151115604" target="_blank">📱 WhatsApp</a>
-        </div>
-      `
-    };
+<script>
+  const routes = {
+    home: `
+      <h2>Your moment to renew has arrived</h2>
+      <p class="cta">
+        Step into a sanctuary of relaxation, beauty, and total renewal.
+        Book your appointment today and rediscover your balance 💆‍♀️✨
+      </p>
+      <a href="#" class="btn-gold" onclick="navigate('contact')">Book Your Appointment</a>
+    `,
+    services: `
+      <h2>Services & Pricing</h2>
+      <div class="services">
+        ✨ <strong>Relaxing Massage:</strong> $500 MXN (60 min)<br>
+        ✨ <strong>Deep Cleansing Facial:</strong> $600 MXN (45 min)<br>
+        ✨ <strong>Spa Pedicure:</strong> $350 MXN<br>
+        ✨ <strong>Classic Manicure:</strong> $250 MXN<br>
+        ✨ <strong>Body Treatment & Wrap:</strong> $750 MXN<br>
+        ✨ <strong>Facial + Massage Combo:</strong> $950 MXN
+      </div>
+      <a href="#" class="btn-gold" onclick="navigate('contact')">Book Now</a>
+    `,
+    gallery: `
+      <h2>Gallery</h2>
+      <div class="gallery">
+        <img src="https://via.placeholder.com/300x200?text=Massage">
+        <img src="https://via.placeholder.com/300x200?text=Facial">
+        <img src="https://via.placeholder.com/300x200?text=Pedicure">
+        <img src="https://via.placeholder.com/300x200?text=Spa+Experience">
+      </div>
+    `,
+    about: `
+      <h2>About Us</h2>
+      <p>
+        Casa Renace is a wellness sanctuary created by women, for women.
+        Our mission is to help you reconnect with yourself through personalized
+        treatments that nurture your body and elevate your soul.
+      </p>
+      <a href="#" class="btn-gold" onclick="navigate('contact')">Schedule Your Visit</a>
+    `,
+    contact: `
+      <h2>Book Your Appointment</h2>
+      <form onsubmit="sendToWhatsApp(event)">
+        <input type="text" id="name" placeholder="Full Name" required>
+        <input type="tel" id="phone" placeholder="Phone Number" required>
+        <select id="service" required>
+          <option value="">Select a Service</option>
+          <option>Relaxing Massage</option>
+          <option>Deep Cleansing Facial</option>
+          <option>Spa Pedicure</option>
+          <option>Classic Manicure</option>
+          <option>Body Treatment</option>
+          <option>Facial + Massage Combo</option>
+        </select>
+        <input type="date" id="date" required>
+        <input type="time" id="time" required>
+        <select id="payment" required>
+          <option value="">Payment Method</option>
+          <option>Bank Transfer</option>
+          <option>Cash</option>
+        </select>
+        <button type="submit">Book via WhatsApp</button>
+      </form>
+      <div class="social">
+        <a href="https://instagram.com" target="_blank">📸 Instagram</a>
+        <a href="https://facebook.com" target="_blank">📘 Facebook</a>
+        <a href="https://wa.me/524151115604" target="_blank">📱 WhatsApp</a>
+      </div>
+    `
+  };
 
-    function navigate(page) {
-      document.getElementById("content").innerHTML = routes[page];
-      history.pushState({ page }, "", "#" + page);
-    }
+  function navigate(page) {
+    document.getElementById("content").innerHTML = routes[page];
+    history.pushState({ page }, "", "#" + page);
+  }
 
-    window.onload = () => {
-      const page = location.hash.replace("#", "") || "home";
-      navigate(page);
-    };
+  window.onload = () => {
+    const page = location.hash.replace("#", "") || "home";
+    navigate(page);
+  };
 
-    function sendToWhatsApp(e) {
-      e.preventDefault();
+  function sendToWhatsApp(e) {
+    e.preventDefault();
 
-      const name = document.getElementById("name").value.trim();
-      const phone = document.getElementById("phone").value.trim();
-      const service = document.getElementById("service").value;
-      const date = document.getElementById("date").value;
-      const time = document.getElementById("time").value;
-      const payment = document.getElementById("payment").value;
+    const name = document.getElementById("name").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const service = document.getElementById("service").value;
+    const date = document.getElementById("date").value;
+    const time = document.getElementById("time").value;
+    const payment = document.getElementById("payment").value;
 
-      const today = new Date();
-      const formattedDate = today.toISOString().slice(0, 10).replace(/-/g, "");
-      const randomNum = Math.floor(Math.random() * 900 + 100);
-      const folio = `CR-${formattedDate}-${randomNum}`;
+    const today = new Date();
+    const formattedDate = today.toISOString().slice(0, 10).replace(/-/g, "");
+    const randomNum = Math.floor(Math.random() * 900 + 100);
+    const folio = `CR-${formattedDate}-${randomNum}`;
 
-      const msg = `📌 *Folio de reserva:* ${folio}%0A👤 Nombre: ${name}%0A📞 Teléfono: ${phone}%0A💆 Servicio: ${service}%0A📅 Fecha: ${date}%0A⏰ Hora: ${time}%0A💳 Método de pago: ${payment}`;
+    const msg =
+      `📌 *Booking Reference:* ${folio}%0A` +
+      `👤 Name: ${name}%0A` +
+      `📞 Phone: ${phone}%0A` +
+      `💆 Service: ${service}%0A` +
+      `📅 Date: ${date}%0A` +
+      `⏰ Time: ${time}%0A` +
+      `💳 Payment Method: ${payment}`;
 
-      const whatsappNumber = "524151115604"; // CAMBIA A TU NÚMERO
-      const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(msg)}`;
-      window.open(url, "_blank");
-    }
-  </script>
+    const whatsappNumber = "524151115604";
+    const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(msg)}`;
+    window.open(url, "_blank");
+  }
+</script>
 
 </body>
 </html>
+
