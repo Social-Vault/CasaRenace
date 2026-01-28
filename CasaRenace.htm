@@ -6,19 +6,16 @@
   <title>Casa Renace | Luxury Spa & Wellness</title>
 
   <!-- Font Awesome Icons -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    integrity="sha512-8+5g7b6p7N1m3ZqQxX2KkD9k9QZQ0k0s5m9C5xKZ9+K0F6L4bZ4y3Z8yN2F1C0yE0b5R3yZK3Z5kQ=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  />
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        integrity="sha512-8+5g7b6p7N1m3ZqQxX2KkD9k9QZQ0k0s5m9C5xKZ9+K0F6L4bZ4y3Z8yN2F1C0yE0b5R3yZK3Z5kQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <style>
     :root {
       --gold: #bfa257;
-      --black: #000;
-      --white: #fff;
+      --black: #000000;
+      --white: #ffffff;
       --whatsapp: #25d366;
     }
 
@@ -164,23 +161,29 @@
       color: var(--gold);
     }
 
-    /* WhatsApp Floating Button */
+    /* WhatsApp with Text Floating */
     .whatsapp-float {
       position: fixed;
       bottom: 20px;
       right: 20px;
       background: var(--whatsapp);
       color: white;
-      font-size: 26px;
-      padding: 14px 16px;
-      border-radius: 50%;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+      font-size: 18px;
+      padding: 14px 20px;
+      border-radius: 50px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.4);
       z-index: 999;
-      transition: transform 0.3s;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: transform 0.3s, box-shadow 0.3s;
     }
 
     .whatsapp-float:hover {
-      transform: scale(1.1);
+      transform: scale(1.08);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.6);
     }
 
     @media (max-width: 600px) {
@@ -224,42 +227,15 @@
   </div>
 </footer>
 
-<!-- WhatsApp Floating Button -->
+<!-- WhatsApp Floating Button with Text -->
 <a
   href="https://wa.me/524151115604"
   class="whatsapp-float"
   target="_blank"
-  aria-label="Chat on WhatsApp"
-  title="Chat via WhatsApp"
+  aria-label="Book via WhatsApp"
 >
-  <i class="fab fa-whatsapp"></i>
+  <i class="fab fa-whatsapp"></i> Book Now
 </a>
-
-<style>
-  .whatsapp-float {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: #25d366;
-    color: white;
-    font-size: 36px; /* <-- más grande */
-    padding: 18px 20px;
-    border-radius: 50%;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-    z-index: 999;
-    text-align: center;
-    transition: transform 0.3s, box-shadow 0.3s;
-  }
-
-  .whatsapp-float:hover {
-    transform: scale(1.1);
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6);
-  }
-
-  .whatsapp-float i {
-    vertical-align: middle;
-  }
-</style>
 
 <script>
   const routes = {
@@ -339,7 +315,7 @@
   function sendToWhatsApp(e) {
     e.preventDefault();
 
-    const name = nameInput = document.getElementById("name").value;
+    const name = document.getElementById("name").value.trim();
     const phone = document.getElementById("phone").value;
     const service = document.getElementById("service").value;
     const date = document.getElementById("date").value;
@@ -367,5 +343,3 @@
 
 </body>
 </html>
-
-
