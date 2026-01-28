@@ -4,11 +4,22 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Casa Renace | Luxury Spa & Wellness</title>
+
+  <!-- Font Awesome Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    integrity="sha512-8+5g7b6p7N1m3ZqQxX2KkD9k9QZQ0k0s5m9C5xKZ9+K0F6L4bZ4y3Z8yN2F1C0yE0b5R3yZK3Z5kQ=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
   <style>
     :root {
       --gold: #bfa257;
-      --black: #000000;
-      --white: #ffffff;
+      --black: #000;
+      --white: #fff;
+      --whatsapp: #25d366;
     }
 
     * {
@@ -48,7 +59,6 @@
       color: var(--white);
       text-decoration: none;
       font-weight: bold;
-      font-size: 1rem;
       transition: color 0.3s;
     }
 
@@ -77,16 +87,13 @@
     .btn-gold {
       background: var(--gold);
       color: var(--black);
-      padding: 14px 24px;
-      border: none;
+      padding: 14px 26px;
       border-radius: 50px;
       font-weight: bold;
-      font-size: 1.1rem;
-      cursor: pointer;
-      transition: background 0.3s;
       text-decoration: none;
       display: inline-block;
       margin-top: 1rem;
+      transition: background 0.3s;
     }
 
     .btn-gold:hover {
@@ -98,19 +105,16 @@
       max-width: 600px;
       margin: auto;
       line-height: 1.6;
-      font-size: 1.05rem;
     }
 
     .gallery {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
       gap: 1rem;
-      margin-top: 1rem;
     }
 
     .gallery img {
       width: 100%;
-      height: auto;
       border-radius: 8px;
     }
 
@@ -136,58 +140,61 @@
       cursor: pointer;
     }
 
-    button:hover {
-      background: #d4b46b;
+    footer {
+      border-top: 1px solid #333;
+      padding: 2rem 1rem;
+      text-align: center;
+      margin-top: 3rem;
     }
 
-    .social {
-      margin-top: 2rem;
+    .footer-social {
+      margin-top: 1rem;
       display: flex;
-      flex-wrap: wrap;
       justify-content: center;
       gap: 1.5rem;
-      font-size: 1.2rem;
+      font-size: 1.5rem;
     }
 
-    .social a {
+    .footer-social a {
       color: var(--white);
-      text-decoration: none;
+      transition: color 0.3s;
     }
 
-    footer {
-      text-align: center;
-      padding: 1.5rem;
-      border-top: 1px solid #333;
-      margin-top: 3rem;
-      font-size: 0.9rem;
+    .footer-social a:hover {
+      color: var(--gold);
+    }
+
+    /* WhatsApp Floating Button */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: var(--whatsapp);
+      color: white;
+      font-size: 26px;
+      padding: 14px 16px;
+      border-radius: 50%;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+      z-index: 999;
+      transition: transform 0.3s;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1);
     }
 
     @media (max-width: 600px) {
-      header h1 {
-        font-size: 2rem;
-      }
-
-      .cta {
-        font-size: 1.05rem;
+      nav {
+        flex-direction: column;
       }
 
       .btn-gold {
         width: 100%;
-        font-size: 1rem;
-      }
-
-      form {
-        width: 100%;
-        padding: 0 1rem;
-      }
-
-      nav {
-        flex-direction: column;
-        align-items: center;
       }
     }
   </style>
 </head>
+
 <body>
 
 <header>
@@ -206,8 +213,26 @@
 <main id="content"></main>
 
 <footer>
-  © 2026 Casa Renace · Luxury Spa & Wellness
+  <p>© 2026 Casa Renace · Luxury Spa & Wellness</p>
+  <div class="footer-social">
+    <a href="https://www.instagram.com/casa_renace_/" target="_blank" aria-label="Instagram">
+      <i class="fab fa-instagram"></i>
+    </a>
+    <a href="https://www.facebook.com/profile.php?id=100076182671422" target="_blank" aria-label="Facebook">
+      <i class="fab fa-facebook"></i>
+    </a>
+  </div>
 </footer>
+
+<!-- WhatsApp Floating Button -->
+<a
+  href="https://wa.me/524151115604"
+  class="whatsapp-float"
+  target="_blank"
+  aria-label="Chat on WhatsApp"
+>
+  <i class="fab fa-whatsapp"></i>
+</a>
 
 <script>
   const routes = {
@@ -215,7 +240,7 @@
       <h2>Your moment to renew has arrived</h2>
       <p class="cta">
         Step into a sanctuary of relaxation, beauty, and total renewal.
-        Book your appointment today and rediscover your balance 💆‍♀️✨
+        Book your appointment today and rediscover your balance ✨
       </p>
       <a href="#" class="btn-gold" onclick="navigate('contact')">Book Your Appointment</a>
     `,
@@ -272,11 +297,6 @@
         </select>
         <button type="submit">Book via WhatsApp</button>
       </form>
-      <div class="social">
-        <a href="https://www.instagram.com/casa_renace_/" target="_blank">📸 Instagram</a>
-        <a href="https://www.facebook.com/profile.php?id=100076182671422" target="_blank">📘 Facebook</a>
-        <a href="https://wa.me/524151115604" target="_blank">📱 WhatsApp</a>
-      </div>
     `
   };
 
@@ -286,40 +306,39 @@
   }
 
   window.onload = () => {
-    const page = location.hash.replace("#", "") || "home";
-    navigate(page);
+    navigate(location.hash.replace("#", "") || "home");
   };
 
   function sendToWhatsApp(e) {
     e.preventDefault();
 
-    const name = document.getElementById("name").value.trim();
-    const phone = document.getElementById("phone").value.trim();
+    const name = nameInput = document.getElementById("name").value;
+    const phone = document.getElementById("phone").value;
     const service = document.getElementById("service").value;
     const date = document.getElementById("date").value;
     const time = document.getElementById("time").value;
     const payment = document.getElementById("payment").value;
 
-    const today = new Date();
-    const formattedDate = today.toISOString().slice(0, 10).replace(/-/g, "");
-    const randomNum = Math.floor(Math.random() * 900 + 100);
-    const folio = `CR-${formattedDate}-${randomNum}`;
+    const d = new Date();
+    const folio = `CR-${d.toISOString().slice(0,10).replace(/-/g,'')}-${Math.floor(Math.random()*900+100)}`;
 
     const msg =
-      `📌 *Booking Reference:* ${folio}%0A` +
-      `👤 Name: ${name}%0A` +
-      `📞 Phone: ${phone}%0A` +
-      `💆 Service: ${service}%0A` +
-      `📅 Date: ${date}%0A` +
-      `⏰ Time: ${time}%0A` +
-      `💳 Payment Method: ${payment}`;
+      `📌 Booking Reference: ${folio}%0A` +
+      `Name: ${name}%0A` +
+      `Phone: ${phone}%0A` +
+      `Service: ${service}%0A` +
+      `Date: ${date}%0A` +
+      `Time: ${time}%0A` +
+      `Payment: ${payment}`;
 
-    const whatsappNumber = "524151115604";
-    const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(msg)}`;
-    window.open(url, "_blank");
+    window.open(
+      `https://wa.me/524151115604?text=${encodeURIComponent(msg)}`,
+      "_blank"
+    );
   }
 </script>
 
 </body>
 </html>
+
 
