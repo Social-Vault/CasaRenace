@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Casa Renace</title>
-
   <style>
     :root {
       --gold: #bfa257;
@@ -19,27 +18,28 @@
     }
 
     body {
-      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-family: 'Helvetica Neue', sans-serif;
       background: var(--black);
       color: var(--white);
     }
 
     header {
       text-align: center;
-      padding: 2.5rem 1rem;
+      padding: 3rem 1rem 2rem;
       border-bottom: 1px solid #333;
     }
 
     header h1 {
-      font-size: 3rem;
+      font-size: 2.5rem;
       color: var(--gold);
-      margin-bottom: .5rem;
+      margin-bottom: 0.5rem;
     }
 
     nav {
       display: flex;
+      flex-wrap: wrap;
       justify-content: center;
-      gap: 1.5rem;
+      gap: 1rem;
       padding: 1rem;
       background: #111;
     }
@@ -48,7 +48,8 @@
       color: var(--white);
       text-decoration: none;
       font-weight: bold;
-      transition: color .3s;
+      font-size: 1rem;
+      transition: color 0.3s;
     }
 
     nav a:hover {
@@ -56,7 +57,7 @@
     }
 
     #content {
-      max-width: 900px;
+      max-width: 1000px;
       margin: auto;
       padding: 2rem 1rem;
       text-align: center;
@@ -65,26 +66,51 @@
     h2 {
       color: var(--gold);
       margin-bottom: 1rem;
-      font-size: 2rem;
+      font-size: 1.8rem;
+    }
+
+    .cta {
+      font-size: 1.2rem;
+      margin: 2rem 0;
+    }
+
+    .btn-gold {
+      background: var(--gold);
+      color: var(--black);
+      padding: 14px 24px;
+      border: none;
+      border-radius: 50px;
+      font-weight: bold;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: background 0.3s;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 1rem;
+    }
+
+    .btn-gold:hover {
+      background: #d4b46b;
     }
 
     .services {
       text-align: left;
       max-width: 600px;
       margin: auto;
-      line-height: 1.7;
-      font-size: 1.1rem;
+      line-height: 1.6;
+      font-size: 1.05rem;
     }
 
     .gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
       gap: 1rem;
       margin-top: 1rem;
     }
 
     .gallery img {
       width: 100%;
+      height: auto;
       border-radius: 8px;
     }
 
@@ -110,9 +136,14 @@
       cursor: pointer;
     }
 
+    button:hover {
+      background: #d4b46b;
+    }
+
     .social {
       margin-top: 2rem;
       display: flex;
+      flex-wrap: wrap;
       justify-content: center;
       gap: 1.5rem;
       font-size: 1.2rem;
@@ -128,123 +159,152 @@
       padding: 1.5rem;
       border-top: 1px solid #333;
       margin-top: 3rem;
-      font-size: .9rem;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      .cta {
+        font-size: 1.05rem;
+      }
+
+      .btn-gold {
+        width: 100%;
+        font-size: 1rem;
+      }
+
+      form {
+        width: 100%;
+        padding: 0 1rem;
+      }
+
+      nav {
+        flex-direction: column;
+        align-items: center;
+      }
     }
   </style>
 </head>
-
 <body>
 
-<header>
-  <h1>Casa Renace</h1>
-  <p>Renueva cuerpo, mente y espíritu 🦋</p>
-</header>
+  <header>
+    <h1>Casa Renace</h1>
+    <p>Renueva cuerpo, mente y espíritu 🦋</p>
+  </header>
 
-<nav>
-  <a href="#" onclick="navigate('home')">Inicio</a>
-  <a href="#" onclick="navigate('services')">Servicios</a>
-  <a href="#" onclick="navigate('gallery')">Galería</a>
-  <a href="#" onclick="navigate('about')">Quiénes Somos</a>
-  <a href="#" onclick="navigate('contact')">Reservas</a>
-</nav>
+  <nav>
+    <a href="#" onclick="navigate('home')">Inicio</a>
+    <a href="#" onclick="navigate('services')">Servicios</a>
+    <a href="#" onclick="navigate('gallery')">Galería</a>
+    <a href="#" onclick="navigate('about')">Quiénes Somos</a>
+    <a href="#" onclick="navigate('contact')">Reservas</a>
+  </nav>
 
-<main id="content"></main>
+  <main id="content"></main>
 
-<footer>
-  © 2026 Casa Renace · Bienestar & Belleza
-</footer>
+  <footer>
+    © 2026 Casa Renace · Bienestar & Belleza
+  </footer>
 
-<script>
-  const routes = {
-    home: `
-      <h2>Bienvenida</h2>
-      <p>En Casa Renace creamos experiencias de relajación profunda, belleza y cuidado personal en un ambiente de armonía y paz.</p>
-    `,
+  <script>
+    const routes = {
+      home: `
+        <h2>Tu momento de renacer ha llegado</h2>
+        <p class="cta">Sumérgete en un oasis de calma, belleza y renovación total. Reserva ahora y descubre cómo se siente volver a ti 💆‍♀️💖</p>
+        <a href="#" class="btn-gold" onclick="navigate('contact')">Reservar mi cita</a>
+      `,
+      services: `
+        <h2>Servicios & Precios</h2>
+        <div class="services">
+          ✨ <strong>Masaje relajante:</strong> $500 MXN (60 min)<br>
+          ✨ <strong>Facial limpieza profunda:</strong> $600 MXN (45 min)<br>
+          ✨ <strong>Pedicura Spa:</strong> $350 MXN<br>
+          ✨ <strong>Manicura clásica:</strong> $250 MXN<br>
+          ✨ <strong>Tratamiento corporal con envoltura:</strong> $750 MXN<br>
+          ✨ <strong>Combo facial + masaje:</strong> $950 MXN
+        </div>
+        <a href="#" class="btn-gold" onclick="navigate('contact')">Agendar ahora</a>
+      `,
+      gallery: `
+        <h2>Galería</h2>
+        <div class="gallery">
+          <img src="https://via.placeholder.com/300x200?text=Masaje">
+          <img src="https://via.placeholder.com/300x200?text=Facial">
+          <img src="https://via.placeholder.com/300x200?text=Pedicura">
+          <img src="https://via.placeholder.com/300x200?text=Spa+Experience">
+        </div>
+      `,
+      about: `
+        <h2>Quiénes Somos</h2>
+        <p>Casa Renace es un santuario de bienestar creado por mujeres, para mujeres. Nuestro propósito es ayudarte a reconectar contigo misma mediante servicios que cuidan tu cuerpo y elevan tu alma.</p>
+        <a href="#" class="btn-gold" onclick="navigate('contact')">Quiero una cita</a>
+      `,
+      contact: `
+        <h2>Reserva tu cita</h2>
+        <form onsubmit="sendToWhatsApp(event)">
+          <input type="text" id="name" placeholder="Nombre completo" required>
+          <input type="tel" id="phone" placeholder="Teléfono" required>
+          <select id="service" required>
+            <option value="">Selecciona un servicio</option>
+            <option>Masaje relajante</option>
+            <option>Facial limpieza profunda</option>
+            <option>Pedicura spa</option>
+            <option>Manicura clásica</option>
+            <option>Tratamiento corporal</option>
+            <option>Combo facial + masaje</option>
+          </select>
+          <input type="date" id="date" required>
+          <input type="time" id="time" required>
+          <select id="payment" required>
+            <option value="">Método de pago</option>
+            <option>Transferencia</option>
+            <option>Efectivo</option>
+          </select>
+          <button type="submit">Reservar por WhatsApp</button>
+        </form>
+        <div class="social">
+          <a href="https://instagram.com" target="_blank">📸 Instagram</a>
+          <a href="https://facebook.com" target="_blank">📘 Facebook</a>
+          <a href="https://wa.me/5211234567890" target="_blank">📱 WhatsApp</a>
+        </div>
+      `
+    };
 
-    services: `
-      <h2>Servicios</h2>
-      <div class="services">
-        ✨ <strong>Masajes</strong>: relajante, terapéutico, descontracturante<br>
-        ✨ <strong>Faciales</strong>: limpieza profunda, hidratación, anti‑edad<br>
-        ✨ <strong>Pedicura Spa</strong><br>
-        ✨ <strong>Manicura</strong><br>
-        ✨ <strong>Tratamientos corporales</strong><br>
-        ✨ <strong>Otros servicios personalizados</strong>
-      </div>
-    `,
+    function navigate(page) {
+      document.getElementById("content").innerHTML = routes[page];
+      history.pushState({ page }, "", "#" + page);
+    }
 
-    gallery: `
-      <h2>Galería</h2>
-      <div class="gallery">
-        <img src="https://via.placeholder.com/300x200?text=Masaje">
-        <img src="https://via.placeholder.com/300x200?text=Facial">
-        <img src="https://via.placeholder.com/300x200?text=Pedicura">
-        <img src="https://via.placeholder.com/300x200?text=Spa">
-      </div>
-    `,
+    window.onload = () => {
+      const page = location.hash.replace("#", "") || "home";
+      navigate(page);
+    };
 
-    about: `
-      <h2>Quiénes Somos</h2>
-      <p>Casa Renace es un espacio dedicado al bienestar integral. Nuestro objetivo es ayudarte a reconectar contigo, renovando cuerpo y alma a través de tratamientos profesionales y personalizados.</p>
-    `,
+    function sendToWhatsApp(e) {
+      e.preventDefault();
 
-    contact: `
-      <h2>Reserva tu cita</h2>
-      <form onsubmit="sendToWhatsApp(event)">
-        <input type="text" id="name" placeholder="Nombre completo" required>
-        <input type="tel" id="phone" placeholder="Teléfono" required>
-        <select id="service" required>
-          <option value="">Selecciona un servicio</option>
-          <option>Masaje relajante</option>
-          <option>Facial limpieza profunda</option>
-          <option>Pedicura spa</option>
-          <option>Manicura</option>
-          <option>Tratamiento corporal</option>
-        </select>
-        <input type="date" id="date" required>
-        <input type="time" id="time" required>
-        <button type="submit">Reservar por WhatsApp</button>
-      </form>
+      const name = document.getElementById("name").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const service = document.getElementById("service").value;
+      const date = document.getElementById("date").value;
+      const time = document.getElementById("time").value;
+      const payment = document.getElementById("payment").value;
 
-      <div class="social">
-        <a href="https://instagram.com" target="_blank">📸 Instagram</a>
-        <a href="https://facebook.com" target="_blank">📘 Facebook</a>
-        <a href="https://wa.me/5211234567890" target="_blank">📱 WhatsApp</a>
-      </div>
-    `
-  };
+      const today = new Date();
+      const formattedDate = today.toISOString().slice(0, 10).replace(/-/g, "");
+      const randomNum = Math.floor(Math.random() * 900 + 100);
+      const folio = `CR-${formattedDate}-${randomNum}`;
 
-  function navigate(page) {
-    document.getElementById("content").innerHTML = routes[page];
-    history.pushState({ page }, "", "#" + page);
-  }
+      const msg = `📌 *Folio de reserva:* ${folio}%0A👤 Nombre: ${name}%0A📞 Teléfono: ${phone}%0A💆 Servicio: ${service}%0A📅 Fecha: ${date}%0A⏰ Hora: ${time}%0A💳 Método de pago: ${payment}`;
 
-  window.onload = () => {
-    const page = location.hash.replace("#", "") || "home";
-    navigate(page);
-  };
-
-  function sendToWhatsApp(e) {
-    e.preventDefault();
-
-    const name = document.getElementById("name").value;
-    const phone = document.getElementById("phone").value;
-    const service = document.getElementById("service").value;
-    const date = document.getElementById("date").value;
-    const time = document.getElementById("time").value;
-
-    const message =
-      `Hola, me gustaría agendar una cita en Casa Renace:%0A` +
-      `👤 Nombre: ${name}%0A` +
-      `📞 Teléfono: ${phone}%0A` +
-      `💆 Servicio: ${service}%0A` +
-      `📅 Fecha: ${date}%0A` +
-      `⏰ Hora: ${time}`;
-
-    const whatsappNumber = "5211234567890"; // TU NÚMERO AQUÍ
-    window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`, "_blank");
-  }
-</script>
+      const whatsappNumber = "5211234567890"; // CAMBIA A TU NÚMERO
+      const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(msg)}`;
+      window.open(url, "_blank");
+    }
+  </script>
 
 </body>
 </html>
